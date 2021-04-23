@@ -1,4 +1,4 @@
-/* Conditionals Using if
+// Conditionals Using if
 let price = 20;
 
 if (price !== 15) {
@@ -36,4 +36,19 @@ if (1 === "1") {
 } else {
     showMessage('false');
 }
-*/
+
+
+// The Ternary Operator 
+// (condition) ? true-statement : false-satatement
+
+price = 20;
+(price > 10) ? showMessage('yes') : showMessage('no');
+
+price = 5;
+// Best practice
+let message = (price > 10) ? 'expensive' : 'cheap';
+showMessage(message);
+
+// Variables cannot be accessed outside of the block, for the old var, was possible
+
+// Lopping with for()
