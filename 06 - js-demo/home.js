@@ -52,3 +52,28 @@ showMessage(message);
 // Variables cannot be accessed outside of the block, for the old var, was possible
 
 // Lopping with for()
+// be careful with infinitive loops, you can get stuck with the web server
+
+// While loop
+let i = 4;
+while (i > 0) {
+    console.log(i);
+}
+
+
+// Do while, the test of the condition is tested after the code block
+// 4, 3, 2, 1
+let i = 4;
+do {
+    console.log(i);
+    i--;
+}
+while (i > 0);
+
+// -4
+let i = -4;
+do {
+    console.log(i);
+    i--;
+}
+while (i > 0);
