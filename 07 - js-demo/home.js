@@ -19,7 +19,6 @@ let myFunction = function loggingFunction(message, firstName) {
 }
 
 myFunction('Hello', 'John');
-*/
 
 function getSecretCode(value) {
 
@@ -31,5 +30,10 @@ function getSecretCode(value) {
 
 // best practice
 let secretCode = getSecretCode(2);
-showMessage(secretCode);
+showMessage( secretCode );
 //showMessage( getSecretCode(2) );
+*/
+
+//Function Scope, once the function completes execution, any parameters and local variable disappear 
+// That's good because we can encapsulate some code and make sure it doesn't leak out into the surrouding code
+let key = 42
