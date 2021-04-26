@@ -1,6 +1,12 @@
+// Function declaration or a function statement
+function logMessage() {
+    console.log('Here is a message');
+}
 
-let i = -4;
-do {
-    console.log(i);
-    i--;
-} while (i > 0);
+// Function expression, best practice to give a name for the function, easir to debug too
+let myFunction = function loggingFunction() {
+    console.log("Here is another message");
+}
+
+logMessage();
+myFunction();
