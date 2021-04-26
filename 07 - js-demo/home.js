@@ -1,3 +1,4 @@
+/*
 // Function declaration or a function statement
 function logMessage() {
     console.log('Here is a message');
@@ -10,3 +11,25 @@ let myFunction = function loggingFunction() {
 
 logMessage();
 myFunction();
+
+
+let myFunction = function loggingFunction(message, firstName) {
+    console.log(message);
+    console.log(firstName);
+}
+
+myFunction('Hello', 'John');
+*/
+
+function getSecretCode(value) {
+
+    // it's cleaner that way
+    let code = value * 42;
+    return code;
+    //return value * 42
+}
+
+// best practice
+let secretCode = getSecretCode(2);
+showMessage(secretCode);
+//showMessage( getSecretCode(2) );
