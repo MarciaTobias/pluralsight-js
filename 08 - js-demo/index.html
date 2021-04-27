@@ -120,10 +120,19 @@
                     <h4>Trail Review</h4>
                     <div>Asphalt</div>
                     <div>National Park</div>
-                    <a class="btn btn-default" href="#">See Review</a>
+                    <!-- Deleting the href, this is going to be handle by JS -->
+                    <!-- Including an id to idetentify the element -->
+                    <a id="see-review" class="btn btn-default">See Review</a>
                 </div>
             </div>
         </div>
+
+        <!-- d-none is a bootstrap class, that stands for display none, it will be hidden -->
+        <div id="review" class="container d-none">
+            <h4>Review Title...</h4>
+            <p>Review text...</p>
+        </div>
+
     </div>
 
     <!-- FOOTER -->

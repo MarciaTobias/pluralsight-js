@@ -1,4 +1,3 @@
-
 /*
 // DOM - Document Object Model
 // Objects has a several propoerties
@@ -62,5 +61,45 @@ function incrementAge(person) {
 incrementAge( person )
 
 showMessage(person.age);
+
+
+// Standard built-in objects
+let now = new Date();
+showMessage( now.toDateString() );
+
+showMessage( Math.abs(-42) );
+
+let s = 'Hello';
+showMessage( s.charAt(0));
+
+
+// We can use JS with Node.js to run JS on the server, with Cordova
+// Events such as a user typing an informations or clicking a button
+
+const header = document.getElementById('message');
+
+// that is the way to overrides css,
+// get the element, access the style property and access the css property
+header.style.color ='red';
+
+// font-weight is in CSS. JS does not allow to have a dash in the name
+header.style.fontWeight = '100';
 */
 
+const button = document.getElementById('see-review');
+
+button.addEventListener('click', function() {
+    const review = document.getElementById('review');
+
+    // acessing the class for this element
+    // removes the d-none class and changes text button
+    if(review.classList.contains('d-none')) {
+        review.classList.remove('d-none');
+        button.textContent = 'CLOSE REVIEW';
+
+    } else {
+        // add the d-none back
+        review.classList.add('d-none');
+        button.textContent = 'SEE REVIEW';
+    }
+});
