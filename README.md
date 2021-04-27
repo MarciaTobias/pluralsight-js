@@ -1,1 +1,2 @@
 # pluralsight-js
+Learning JavaScript
