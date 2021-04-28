@@ -17,7 +17,7 @@ button.addEventListener('click', function() {
     
 
 });
-*/
+
 
 // Create and Initialize an Array
 let values1 = [1, 2, 3]; // values has three elements
@@ -30,3 +30,8 @@ const values3 = ['a', 'b', 'c'];
 console.log(values3);
 console.log(typeof(values3)); // Array is not build-in data type
 console.log(Array.isArray(values3)); // Method that checks if is an array
+*/
+
+const values4 = ['a', 'b', 'c'];
+values4[0] = 'aaa'; // how to change the value in a array
+console.log(values4[0]);
