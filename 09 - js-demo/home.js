@@ -54,7 +54,7 @@ const newValues = values.slice(1, 4);
 
 console.log(newValues);
 console.log(values);// original array
-*/
+
 
 // Splice used to insert or delete elements of an original array
 // The first aurgument is the index of element to be deleted and the second is the number of item we want delete
@@ -65,3 +65,47 @@ values.splice(2, 0, 'hello'); //to insert a value
 //console.log(newValues);
 
 console.log(values);// original array
+
+// indexOf() looks for the index of an element, 
+const values = ['a', 'b', 'c', 'd', 'e'];
+
+console.log(values.indexOf('b'));
+console.log(values.indexOf('v')); //if the element does exist will return -1
+
+// filter function, filter based in a criteria.
+const values = ['a', 'b', 'c', 'd'];
+
+const set = values.filter(function(item) {
+    console.log('item: ' + item);
+    return item > 'b';
+
+});
+
+console.log(set);
+
+// There are a lot of methods that take functions as aruguments
+const values = ['a', 'bb', 'ccc', 'd'];
+
+const found = values.find(function(item) {
+    console.log('item: ' + item);
+    return item.length > 1;
+
+});
+
+console.log(found); // it never gets to the next element, once one is found
+
+// For each used when we want garantee that all the elements pass in the function
+const values = ['a', 'b', 'c', 'd'];
+
+values.forEach(function(item) {
+    console.log('item: ' + item);
+ß
+});
+*/
+
+// Will return all elements that have an specific class name on html file
+const containers = document.getElementsByClassName('container');
+
+containers[2].classList.add('d-none');
+
+console.log(containers); // returns a array of containers, HTMLCollection(8)
