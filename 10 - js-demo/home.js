@@ -1,3 +1,4 @@
+/*
 // Global scope and function scope
 // Scope refers to the area in which you can access a variable
 // Variables get declared in a scope
@@ -23,3 +24,27 @@ function showAppName() {
 }
 
 showAppName();
+
+function showProductId() {
+    let productId = 12345; // declared in function scope, accessible just inside of the function
+    console.log(productId);
+}
+
+showProductId();
+*/
+
+// Var and Hosting
+productId = 456;
+
+console.log(productId); // hosting is to access the variable before declaring it
+
+var productId = 123; // change for let to fix it, avoid to use var
+
+// Functions can be hoisted
+// JS files get executed after two passes
+
+showProductId();
+
+function showProductId() {
+    console.log(123);
+}
