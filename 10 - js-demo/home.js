@@ -31,7 +31,6 @@ function showProductId() {
 }
 
 showProductId();
-*/
 
 // Var and Hosting
 productId = 456;
@@ -48,3 +47,14 @@ showProductId();
 function showProductId() {
     console.log(123);
 }
+*/
+
+// Before was possible to use a variable without declaring.
+
+productId = 1234; // is being declared on an object called window.
+
+console.log(productId);
+console.log(productId); // window is where the app is running
+
+// Including this string force the code run in strict mode, which forces you to declare variables
+'use stric';
