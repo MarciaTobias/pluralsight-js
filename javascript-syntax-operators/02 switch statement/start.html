@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="UTF-8" />
     <title> Switch Statement Samples</title>
 </head>
+
 
 <body>
     <button onclick="simpleSwitch();">Simple Switch Sample</button>
@@ -30,20 +31,34 @@
     <button onclick="forgetBreak();">Forget a Break</button>
 
     <script>
-        let color = "Red";
+        function multipleCase() {
+            let color = "Red";
 
-        switch (color) {
-            case "Red":
-            case "Pink":
-                console.log("The color is red");
-                break;
+            switch (color) {
+                case "Red":
+                case "Pink":
+                    console.log("The color is red");
+                    break;
 
-            case "Blue":
-            case "Light Blue":
-            case "Dark Blue":
-                console.log("The color is blue");
-                break;
+                case "Blue":
+                case "Light Blue":
+                case "Dark Blue":
+                    console.log("The color is blue");
+                    break;
+
+                case "Gray":
+                case "Grey":
+                    console.log("The color is grey");
+                    break;
+                
+                default: // can be anywhere,
+                    console.log("Unknown color");
+                    break;
+            }    
         }
+
+    
+        
     </script>
 </body>
 
