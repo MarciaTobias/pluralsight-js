@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title> Difference between for/in and for/of</title>
+</head>
+
+
+<body>
+    <button onclick="forofSample();">for/of</button>
+    <script>
+        'use strict';
+
+        let _products = [
+            {
+                "productID": 680,
+                "name": "HL Road Frame - Black, 58",
+                "productNumber": "FR-R92B-58",
+                "color": "Black",
+                "standardCost": 1059.31,
+                "listPrice": 1431.50
+            },
+            {
+                "productID": 709,
+                "name": "Mountain Bike Socks, M",
+                "productNumber": "SO-B909-M",
+                "color": "White",
+                "standardCost": 3.3963,
+                "listPrice": 9.50
+            }
+        ];
+        
+        function forofSample() {
+            for (const item of _products) {
+                console.log(JSON.stringify(item));
+            }
+        }
+                
+    </script>
+
+</body>
+
+</html>
