@@ -11,7 +11,7 @@
     <script>
         'use strict';
 
-        let _products = [
+        let _products = [ // array of objects
             {
                 "productID": 680,
                 "name": "HL Road Frame - Black, 58",
@@ -32,10 +32,25 @@
         
         function forofSample() {
             for (const item of _products) {
-                console.log(JSON.stringify(item));
+                console.log(JSON.stringify(item));// to emite an object to the console
             }
-        }
-                
+        }              
+    </script>
+
+    <button onclick="loopStringSample();">Looping over a string</button>
+    <script>
+        'use strict';
+        
+        function loopStringSample() {
+            let productName = "HL Road Frame - Black, 58"; 
+            let letters = "";
+
+            for (const char of productName) {// is treating the string as an iterable object
+                letters += char; // string is an iterable object
+            }
+
+            console.log(letters);
+        }              
     </script>
 
 </body>
