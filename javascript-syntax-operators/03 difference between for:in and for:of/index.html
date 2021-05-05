@@ -8,6 +8,8 @@
 
 <body>
     <button onclick="forofSample();">for/of</button>
+    <button onclick="breakSample();">Break Sample</button>
+    <button onclick="continueSample();">Continue Sample</button>
     <script>
         'use strict';
 
@@ -21,6 +23,14 @@
                 "listPrice": 1431.50
             },
             {
+                "productID": 707,
+                "name": "Sports-100 Helmet, Red",
+                "productNumber": "HL-U509-R",
+                "color": "Red",
+                "standardCost": 13.08,
+                "listPrice": 34.99
+            },
+           {
                 "productID": 709,
                 "name": "Mountain Bike Socks, M",
                 "productNumber": "SO-B909-M",
@@ -34,7 +44,25 @@
             for (const item of _products) {
                 console.log(JSON.stringify(item));// to emite an object to the console
             }
-        }              
+        }    
+        
+        function breakSample() {
+            for (const item of _products) {
+                if (item.standardCost < 20) {
+                    break; // it will break the loop after find the first item
+                }
+                console.log(JSON.stringify(item));
+            }
+        }
+
+        function continueSample() {
+            for (const item of _products) {
+                if (item.standardCost > 1000) {
+                    continue; // this also skipes but goes back to the top of the loop and continues
+                } // if the first item is over 1000 it won't performe the line 63
+                console.log(JSON.stringify(item));
+            }
+        }
     </script>
 
     <button onclick="loopStringSample();">Looping over a string</button>
