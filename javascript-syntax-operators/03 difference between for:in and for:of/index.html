@@ -81,6 +81,22 @@
         }              
     </script>
 
+    <button onclick="labelSample();">Labeled Statement</button>
+    <script>
+        'use strict';
+
+        // Not recommended as this leads to spaghetti code. Don't use it
+        function labelSample() {
+            even: // a label is any name you want followed by a colon
+            for (let index = 1; index <= 10; index++) {
+                if (index % 2 == 1) {
+                    continue even;
+                }
+                console.log(index);
+            }
+        }
+    </script>
+
 </body>
 
 </html>
