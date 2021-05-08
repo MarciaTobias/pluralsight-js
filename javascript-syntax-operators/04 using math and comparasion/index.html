@@ -57,4 +57,27 @@
         }
     </script>
 
+    <button onclick="plusSignSample();">Plus Sign with Numbers and Strings</button>
+
+    <script>
+
+        // Plus sign with Numbers and Strings
+        function plusSignSample() {
+            let price = 200;
+            let stringValue = "100";
+            let result = 0;
+
+            console.log("price = " + price.toString());
+
+            // JS looks ate both operands and determines their data type prior to applying the plus sign
+            // If one of the operands is a string, then string concatenation is performed, it converts price to string
+            result = price + stringValue;
+            console.log("result (number + stringValue) = " + result.toString());
+
+            // The plus sign immediately prior to a strinf variable converts that string to a numeric data type if possible
+            result = price + (+stringValue);
+            console.log("result (number + stringValue) = " + result.toString());
+        }
+    </script>
+
 </body>
