@@ -112,9 +112,62 @@
             // Modulus
             price %= 3;
             console.log("price %= 3 = " + price.toString());
+        }
+    </script>
 
+    <button onclick="comparisonSample();">Comparison Sample</button>
 
+    <script>
+        // Comparasion
+        function comparisonSample() {
+            let price = 200;
+            let result = 0;
 
+            console.log("price = " + price.toString());
+            console.log(" ");
+
+            // Equal to
+            console.log("price == price = " + (price == price).toString());
+
+            // Equal to
+            result = price.toString();
+            // just checks the value not the data type
+            console.log("price(number) == result(string) = " + (price == result).toString());
+
+            // Equal to/Equal type
+            result = price;
+            console.log("price(number) === result(string) = " + (price === result).toString());
+
+            // Equal to/Equal type
+            result = price.toString();
+            console.log("price(number) === result(string) = " + (price === result).toString());
+            console.log(" ");
+
+            // Not Equal to
+            result = 100;
+            console.log("result = " + result.toString());
+            console.log("price(number) != result(number) = " + (price != result.toString()));
+
+            // Not Equal to/Not equal type
+            result = price.toString();
+            console.log("price(number) !== result(string) = " + (price !== result.toString()));
+            console.log(" ");
+
+            // Greather than
+            console.log("price > 10 = " + (price > 10).toString());
+
+            // Greather than or equal to
+            console.log("price >= price = " + (price >= price).toString());
+
+            // Less than
+            console.log("price < 1500 = " + (price < 1500).toString());
+
+            // Less than or equal to
+            console.log("price <= price = " + (price <= price).toString());
+
+            // Ternary
+            result = price < 1500 ? "'less than 1500'" : "'greater than 1500'";
+            console.log("ternary = " + result);
         }
     </script>
 
