@@ -94,4 +94,46 @@
             }
         }
     </script>
+
+    <button onclick="shortCircuitAndSample();">Short Circuit (&&)</button>
+    <script>
+
+        function shortCircuitAndSample() {
+            let result;
+
+            // if first result is false, the second part is never evaluated
+            result = isColorRed("Black") && isGreaterThan1400(1400);
+        }
+
+        function isColorRed(value) {
+            console.log("In the isColorRed() function");
+            return value === "Red";
+        }
+
+        function isGreaterThan1400(value) {
+            console.log("In the isGreaterThan1400() function");
+            return value > 1400;
+        }
+    </script>
+
+    <button onclick="shortCircuitOrSample();">Short Circuit (||)</button>
+    <script>
+
+        function shortCircuitOrSample() {
+            let result;
+
+            console.log(" ");
+            console.log("Calling isColorRed() first");
+
+            // Each expression is evaluated until one returns a true
+            result = isColorRed("Red") || isGreaterThan1400(200);
+
+            // Each expression is evaluated until one returns a true
+            // the rest are then skipped
+            console.log(" ");
+            console.log("Calling isGreaterThan1400() first");
+            result = isGreaterThan1400(200) || isColorRed("Black");
+        }
+    </script>
+    
 </body>
