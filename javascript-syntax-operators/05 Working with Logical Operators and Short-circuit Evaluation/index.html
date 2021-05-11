@@ -56,8 +56,42 @@
             // Result of NaN is false
             value = 100 / "test";
             console.log("100 / 'test' = " + Boolean(value));
-
         }
+    </script>
 
+    <button onclick="logicalSample();">Logical Sample</button>
+    <script>
+        
+        function logicalSample() {
+            let price = 200;
+
+            // AND (&&) Operator
+            if (price > 10 && price < 1600) {
+                console.log("price > 10 && price < 1600 is 'true'");
+            }
+
+            // AND (&&) Operator
+            if (price > 10 && price < 200) {
+                console.log("price > 10 && price < 200 is 'true'");
+            }
+            else {
+                console.log("price > 10 && price < 200 is 'false'");
+            }
+
+            // OR (||) Operator
+            if (price > 10 || price < 1600) {
+                console.log("price > 10 || price < 1600 is 'true'");
+            }
+
+            // OR (||) Operator
+            if (price > 10 || price > 1600) {
+                console.log("price > 10 || price > 1600 is 'true'");
+            }
+
+            // NOT (!) Operator
+            if (!(price < 10)) {
+                console.log("!(price < 10) is 'true'");
+            }
+        }
     </script>
 </body>
