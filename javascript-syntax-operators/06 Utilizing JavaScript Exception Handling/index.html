@@ -5,6 +5,18 @@
     <title>Utilizing JavaScript Exception Handling</title>
 </head>
 
-<body>
-    
+<body>  
+    <button onclick="simpleTryCatch();">Simple Try Catch</button>
+    <script>
+        function simpleTryCatch() {
+            let result;
+
+            try {
+                result = x / 10;
+            } catch (error) {
+                // A JS Error object always has 'name' and 'message' properties, and passes it into the catch block
+                console.log(error.message);
+            }
+        }
+    </script>  
 </body>
