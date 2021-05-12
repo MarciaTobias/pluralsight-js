@@ -56,27 +56,27 @@
         }
     </script>  
 
-<button onclick="throwError();">Throw Error</button>
-<script>
-    function throwError() {
-        try {
-            attemptDivision();
-        } catch (error) {
-            console.log(error.message + " - Error Type: " + error.name);
-        }
-    }
-
-    function attemptDivision() {
-            let result;
+    <button onclick="throwError();">Throw Error</button>
+    <script>
+        function throwError() {
             try {
-                result = x / 10;
+                attemptDivision();
             } catch (error) {
-                // Always include at least a 'message' and 'name' properties
-            throw {
-                "message": "In the attemptDivision() method the following error occured: " + error.message,
-                "name": "CustomError"
-            };
+                console.log(error.message + " - Error Type: " + error.name);
+            }
         }
-    }
-</script>  
+
+        function attemptDivision() {
+                let result;
+                try {
+                    result = x / 10;
+                } catch (error) {
+                    // Always include at least a 'message' and 'name' properties
+                throw {
+                    "message": "In the attemptDivision() method the following error occured: " + error.message,
+                    "name": "CustomError"
+                };
+            }
+        }
+    </script>  
 </body>
