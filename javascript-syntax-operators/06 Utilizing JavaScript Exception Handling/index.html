@@ -36,5 +36,47 @@
                 console.log("In the 'finally' block");// always will run if there is an error
             }
         }
+    </script> 
+    
+    <button onclick="finallySuccessSample();">Finally Success Sample</button>
+    <script>
+        function finallySuccessSample() {
+            let result;
+            let x = 100;
+
+            try {
+                console.log("An error won't occur.");
+                result = x / 10;
+            } catch (error) {
+                console.log("In the 'Catch' block: " + error.message);
+            }
+            finally {
+                console.log("In the 'finally' block");// always will run if there is an error
+            }
+        }
     </script>  
+
+<button onclick="throwError();">Throw Error</button>
+<script>
+    function throwError() {
+        try {
+            attemptDivision();
+        } catch (error) {
+            console.log(error.message + " - Error Type: " + error.name);
+        }
+    }
+
+    function attemptDivision() {
+            let result;
+            try {
+                result = x / 10;
+            } catch (error) {
+                // Always include at least a 'message' and 'name' properties
+            throw {
+                "message": "In the attemptDivision() method the following error occured: " + error.message,
+                "name": "CustomError"
+            };
+        }
+    }
+</script>  
 </body>
