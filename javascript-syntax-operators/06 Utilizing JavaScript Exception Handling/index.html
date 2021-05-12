@@ -18,5 +18,23 @@
                 console.log(error.message);
             }
         }
+    </script>
+
+    <button onclick="finallyCatchSample();">Finally Catch Sample</button>
+    <script>
+        function finallyCatchSample() {
+            let result;
+
+            try {
+                console.log("An error will occur.");
+                result = x / 10;
+                console.log("This line will never run.");// once there is an error in previous line
+            } catch (error) {
+                console.log("In the 'Catch' block: " + error.message);
+            }
+            finally {
+                console.log("In the 'finally' block");// always will run if there is an error
+            }
+        }
     </script>  
 </body>
