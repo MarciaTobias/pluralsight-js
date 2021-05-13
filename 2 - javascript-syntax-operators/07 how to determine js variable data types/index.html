@@ -6,5 +6,58 @@
 </head>
 
 <body>
+    <button onclick="typeofSmaple();">Typeof Operator</button>
+    <script>
+        'use strict';
 
+        let _products = [ // array of objects
+            {
+                "productID": 680,
+                "name": "HL Road Frame - Black, 58",
+                "productNumber": "FR-R92B-58",
+                "color": "Black",
+                "standardCost": 1059.31,
+                "listPrice": 1431.50
+            },
+            {
+                "productID": 707,
+                "name": "Sports-100 Helmet, Red",
+                "productNumber": "HL-U509-R",
+                "color": "Red",
+                "standardCost": 13.08,
+                "listPrice": 34.99
+            },
+           {
+                "productID": 709,
+                "name": "Mountain Bike Socks, M",
+                "productNumber": "SO-B909-M",
+                "color": "White",
+                "standardCost": 3.3963,
+                "listPrice": 9.50
+            }
+        ];
+        
+        // Using the typeof operator
+        function typeofSmaple() {
+            let product = _products[0];
+            // Using the objects types not the primitives
+            // Try to use primitives and avoid those objects
+            let introDate = new Date();
+            let strValue = new String();
+            let isActive = false;
+            let result;
+            let value = null;
+
+            console.log("_products = " + typeof _products);
+            console.log("product = " + typeof product);
+            console.log("product.productID = " + typeof product.productID);
+            console.log("product.productNumber = " + typeof product.productNumber);
+            console.log("introDate = " + typeof introDate); // Dates are objects
+            console.log("strValue = " + typeof strValue); 
+            console.log("isActive = " + typeof isActive);
+            console.log("result = " + typeof result);
+            console.log("value = " + typeof value);
+            console.log("typeofSmaple() = " + typeof typeofSmaple);
+        }
+    </script>
 </body>
