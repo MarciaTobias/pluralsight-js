@@ -37,7 +37,7 @@
             }
         ];
         
-        // Using the typeof operator
+        // Using the typeof operator for checking the type
         function typeofSample() {
             let product = _products[0];
             // Using the objects types not the primitives
@@ -70,13 +70,14 @@
 
             // A constructor property just returns a string,
             // will be nice if can return boolens to say isArray or isDate
+            // it can be used for both objects and primitives
             console.log("_products = " + _products.constructor.toString());
             console.log("product = " + product.constructor.toString());
             console.log("product.productID = " + product.productID.constructor.toString());
             console.log("product.productNumber = " + product.productNumber.constructor.toString());
             console.log("introDate = " + introDate.constructor.toString()); // Dates are objects
             console.log("strValue = " + strValue.constructor.toString()); 
-            console.log("isActive = " + isActive.constructor.toString());
+            console.log("isActive = " + isActive.constructor.toString()); // it cast from a primitive to a object
             console.log("constructorSample() = " + constructorSample.constructor.toString());
         }
     </script>
@@ -113,7 +114,9 @@
 
     <button onclick="instanceOfSample();">Helper Functions Sample</button>
     <script>
+        // Check what type of object it specifically is
         function instanceOfSample() {
+            // Objects are lower to access and takes a litle bit more memory
             let prod = new Product(680, "HL Road Frame - Black, 58", "FR-R92B-58");
             let dt = new Date();
             let name = new String("Product Name");
