@@ -1,14 +1,14 @@
 # pluralsight-js
 Learning JavaScript on PluralSight
 
-1 - JavaScript: Getting Started
+- 1 - JavaScript: Getting Started
 
 by Mark Zamoyta
 
 JavaScript is the popular programming language which powers web pages and web applications. If you are new to programming or just new to the language, this course will get you started coding in JavaScript.
 https://app.pluralsight.com/library/courses/javascript-getting-started/table-of-contents
 
-2 - JavaScript Syntax and Operators
+- 2 - JavaScript Syntax and Operators
 
 by Paul D. Sheriff
 
