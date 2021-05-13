@@ -38,7 +38,7 @@
         ];
         
         // Using the typeof operator
-        function typeofSmaple() {
+        function typeofSample() {
             let product = _products[0];
             // Using the objects types not the primitives
             // Try to use primitives and avoid those objects
@@ -57,7 +57,58 @@
             console.log("isActive = " + typeof isActive);
             console.log("result = " + typeof result);
             console.log("value = " + typeof value);
-            console.log("typeofSmaple() = " + typeof typeofSmaple);
+            console.log("typeofSample() = " + typeof typeofSample);
         }
     </script>
+    <button onclick="constructorSample();">Constructor Sample</button>
+    <script>
+        function constructorSample() {
+            let product = _products[0];
+            let introDate = new Date();
+            let strValue = new String();
+            let isActive = false;
+
+            // A constructor property just returns a string,
+            // will be nice if can return boolens to say isArray or isDate
+            console.log("_products = " + _products.constructor.toString());
+            console.log("product = " + product.constructor.toString());
+            console.log("product.productID = " + product.productID.constructor.toString());
+            console.log("product.productNumber = " + product.productNumber.constructor.toString());
+            console.log("introDate = " + introDate.constructor.toString()); // Dates are objects
+            console.log("strValue = " + strValue.constructor.toString()); 
+            console.log("isActive = " + isActive.constructor.toString());
+            console.log("constructorSample() = " + constructorSample.constructor.toString());
+        }
+    </script>
+
+    <button onclick="helperFunctionsSample();">Helper Functions Sample</button>
+    <script>
+        function helperFunctionsSample() {
+            let introDate = new Date();
+            let result;
+            let value = null;
+
+            // Use helper functions that return true/false
+            console.log("_products is Array? = " + isArray(_products));
+            console.log("_introDate is Date? = " + isDate(introDate));
+
+            // Be sure to check if something is null prior to using
+            console.log("result = " + isNullOrUndeined(result) ? 'null/undefined' : 'not found');
+            console.log("value = " + isNullOrUndeined(value) ? 'null/undefined' : 'not found');
+        }
+
+        // Those are the helper functions
+        function isArray(value) {
+            return value.constructor.toString().indexOf("Array") > -1;
+        }
+
+        function isDate(value) {
+            return value.constructor.toString().indexOf("Date") > -1;
+        }
+
+        function isNullOrUndeined(value) {
+            return value === null || value === undefined;
+        }
+    </script>
+
 </body>
