@@ -25,4 +25,38 @@
             console.log("this === window = " + (this === window).toString());
         }
     </script>
+    
+    <button onclick="this.style.background='Red'">In Event Handler</button>
+    <button onclick="eventHandler(this)">Pass to function from event Handler</button>
+    <script>
+        // 'This' on first buttom, in line js, refers to html element attached to the buttom
+        'use strict';
+
+        // Pass 'this' to function from event handler
+        function eventHandler(ctl) {
+            console.log(ctl.toString());
+        }
+    </script>
+
+    <button onclick="objectLiteral()">Object Literal</button>
+    <script>
+        function objectLiteral() {
+            let product = {
+                "productID": 680,
+                "name": "HL Road Frame - Black, 58",
+                "productNumber": "FR-R92B-58",
+                "color": "Black",
+                "standardCost": 1059.31,
+                "listPrice": 1431.50,
+            grossProfit: function () {
+                return (this.listPrice - this.standardCost).toLocaleString('en-US', {
+                    style: 'currency', currency: 'USD'
+                });
+                
+            }
+        };  
+        
+        console.log(product.grossProfit());
+        }
+    </script>
 </body>
