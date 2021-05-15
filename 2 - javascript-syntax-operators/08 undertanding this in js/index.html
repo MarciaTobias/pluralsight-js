@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -6,5 +6,23 @@
 </head>
 
 <body>
+    <button onclick="functionScope();">Function Scope</button>
+    <script>
+        // 'use strict';
 
+        // Global scope - 'this' is mapped to global/window object
+        console.log("Begin: global scope sample");
+        console.log(this.toString());
+        console.log("this === window = " + (this === window).toString());
+        console.log("End: global scope sample");
+
+        // Function scope - 'this' is mapped to global/window object
+        // Uncomment 'use strict' above to show how it affects this function
+        // If you want to get at the global windown object when 'use strict'
+        // is in effect, use: console.log(window.toString());
+        function functionScope() {
+            console.log(this.toString());
+            console.log("this === window = " + (this === window).toString());
+        }
+    </script>
 </body>
