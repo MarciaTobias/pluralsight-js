@@ -72,8 +72,7 @@
                     return (this.listPrice - this.standardCost).toLocaleString('en-US', {
                         style: 'currency', currency: 'USD'
                     });
-                
-            }
+                }
         }; 
         
         let prod2 = {
@@ -89,6 +88,29 @@
         // Apply allows to pass arguments to that particular method
         console.log(product.grossProfit.apply(product));
         console.log(product.grossProfit.apply(prod2));
+        }
+    </script>
+
+    <button onclick="constructorFunctions()">Constructor Functions</button>
+    <script>
+        function Product(id, name, cost, price) {
+            this.productID = id;
+            this.name = name;
+            this.standardCost = cost;
+            this.listPrice = price;
+
+            this.grossProfit = function () {
+                return (this.listPrice - this.standardCost).toLocaleString('en-US', {
+                        style: 'currency', currency: 'USD'});
+            }
+        }
+
+        function constructorFunctions() {
+            let prod1 = new Product(680, "HL Road Frame - Black, 58", 1059.31, 1431.50);
+            let prod2 = new Product(707, "Sports-100 Helmet, Red", 13.08, 34.99);
+
+            console.log(prod1.grossProfit());
+            console.log(prod2.grossProfit());
         }
     </script>
 </body>
