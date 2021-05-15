@@ -48,15 +48,47 @@
                 "color": "Black",
                 "standardCost": 1059.31,
                 "listPrice": 1431.50,
-            grossProfit: function () {
-                return (this.listPrice - this.standardCost).toLocaleString('en-US', {
-                    style: 'currency', currency: 'USD'
-                });
-                
+                grossProfit: function () {
+                    // 'This' in a object literal always refers to properties or a method inside of that object
+                    return (this.listPrice - this.standardCost).toLocaleString('en-US', {
+                        style: 'currency', currency: 'USD'
+                    });         
             }
         };  
         
         console.log(product.grossProfit());
+        }
+    </script>
+
+    <button onclick="callAndApply()">Call And Apply</button>
+    <script>
+        function callAndApply() {
+            let product = {
+                "productID": 680,
+                "name": "HL Road Frame - Black, 58",
+                "standardCost": 1059.31,
+                "listPrice": 1431.50,
+                grossProfit: function () {
+                    return (this.listPrice - this.standardCost).toLocaleString('en-US', {
+                        style: 'currency', currency: 'USD'
+                    });
+                
+            }
+        }; 
+        
+        let prod2 = {
+            "standardCost": 500,
+            "listPrice": 850
+        }
+        
+        // Call using reference to 'product' properties
+        console.log(product.grossProfit.call(product));
+        // Call using reference to 'prod2' properties
+        console.log(product.grossProfit.call(prod2));
+        console.log(" ");
+        // Apply allows to pass arguments to that particular method
+        console.log(product.grossProfit.apply(product));
+        console.log(product.grossProfit.apply(prod2));
         }
     </script>
 </body>
