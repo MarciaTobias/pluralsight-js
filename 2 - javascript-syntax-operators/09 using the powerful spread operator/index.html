@@ -36,4 +36,50 @@
             console.log(arr3);
         }
     </script>
+
+    <h3>NOT: IE and Edge do not support the Spread Operator</h3>
+    <button onclick="copyObjectArray();">Copy Object Array</button>
+    <script>
+
+        let _products = [ // array of objects
+            {
+                "productID": 680,
+                "name": "HL Road Frame - Black, 58",
+                "productNumber": "FR-R92B-58",
+                "color": "Black",
+                "standardCost": 1059.31,
+                "listPrice": 1431.50
+            },
+            {
+                "productID": 707,
+                "name": "Sports-100 Helmet, Red",
+                "productNumber": "HL-U509-R",
+                "color": "Red",
+                "standardCost": 13.08,
+                "listPrice": 34.99
+            },
+           {
+                "productID": 709,
+                "name": "Mountain Bike Socks, M",
+                "productNumber": "SO-B909-M",
+                "color": "White",
+                "standardCost": 3.3963,
+                "listPrice": 9.50
+            }
+        ];
+
+        function copyObjectArray() {
+            // Careful with object arrays
+            // The arrays is copied, but the underlying objects are still accessed
+            let diff = [..._products];
+            // It's just copying the pointer to where that object is in memory
+            // We are changing the original value because their objects, and objects are not copied by value
+
+            // Modify a property of the new array
+            diff[0].productID = 999;
+
+            console.log(_products[0].productID);
+            console.log(diff[0].productID);
+        }
+    </script>
 </body>
