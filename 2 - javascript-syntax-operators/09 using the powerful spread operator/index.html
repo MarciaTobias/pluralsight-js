@@ -82,4 +82,63 @@
             console.log(diff[0].productID);
         }
     </script>
+
+    <button onclick="concatenateArray();">Concatenate Array</button>
+    <script>
+        let _products2 = [ // array of objects
+            {
+                "productID": 680,
+                "name": "HL Road Frame - Black, 58",
+                "productNumber": "FR-R92B-58",
+                "color": "Black",
+                "standardCost": 1059.31,
+                "listPrice": 1431.50
+            },
+            {
+                "productID": 707,
+                "name": "Sports-100 Helmet, Red",
+                "productNumber": "HL-U509-R",
+                "color": "Red",
+                "standardCost": 13.08,
+                "listPrice": 34.99
+            },
+           {
+                "productID": 709,
+                "name": "Mountain Bike Socks, M",
+                "productNumber": "SO-B909-M",
+                "color": "White",
+                "standardCost": 3.3963,
+                "listPrice": 9.50
+            }
+        ];
+
+        let _newProducts = [
+            {
+                "productID": 712,
+                "name": "AWC Logo Cap",
+                "productNumber": "CA-1098",
+                "color": "Multi",
+                "standardCost": 6.9223,
+                "listPrice": 8.99
+            },
+            {
+                "productID": 821,
+                "name": "Touring Front Wheel",
+                "productNumber": "FW-T905",
+                "color": "Black",
+                "standardCost": 96.7964,
+                "listPrice": 218.01
+            }
+        ];
+
+        // Concatentation
+        function concatenateArray() {
+            // Original way to do in JS
+            let allProducts = _products2.concat(_newProducts)
+            console.log(allProducts.length);
+
+            let spProducts = [..._products2, ..._newProducts];
+            console.log(spProducts.length);
+        }
+    </script>
 </body>
