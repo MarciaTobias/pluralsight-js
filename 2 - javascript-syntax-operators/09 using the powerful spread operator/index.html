@@ -141,4 +141,16 @@
             console.log(spProducts.length);
         }
     </script>
+
+    <button onclick="spreadInConstructores();">Spread In Constructores</button>
+    <script>
+        function spreadInConstructores() {
+            let dt = new Date(2021, 05, 16); // 16 May 2021
+            console.log(dt);
+
+            let dateFields = [2021, 05, 17]; // 17 May 2021
+            dt = new Date(...dateFields);
+            console.log(dt);
+        }
+    </script>
 </body>
