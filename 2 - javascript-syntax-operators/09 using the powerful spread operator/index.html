@@ -171,4 +171,35 @@
             console.log(" ");
         }
     </script>
+
+    <button onclick="objectLiterals();">Object Literals</button>
+    <script>
+        function objectLiterals() {
+            let product = {
+                "productID": 680,
+                "name": "HL Road Frame - Black, 58",
+                "productNumber": "FR-R92B-58",
+                "color": "Black",
+                "standardCost": 1059.31,
+                "listPrice": 1431.50
+            };
+
+            // The follwing perfomers a shallow-copy
+            // Similar to Object.assign()
+            let prod2 = { ...product };
+
+            // Change the newly copied object
+            prod2.productID = 999;
+
+            // Display the objects
+            console.log(product);
+            console.log(prod2);
+
+            // Display the changed value
+            console.log(" ");
+            console.log(product.productID);
+            console.log(prod2.prod2);
+            // It does a copy property by property from on object to the other
+        }
+    </script>
 </body>
