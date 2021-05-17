@@ -11,10 +11,29 @@
         function stringToArray() {
             let productNumber = "FR-R92B-58";
 
+            // Spread Operator converts each character into an array
             let values = [...productNumber];
 
             console.log(values);
         }
+    </script>
 
+    <button onclick="copyArray();">Copy Array</button>
+    <script>
+        function copyArray() {
+            let arr = [1, 2, 3];
+            // Automatically spreads those elements above into the new array
+            let arr2 = [...arr];
+            // We normally use the slice metod to copy an array
+            let arr3 = arr.slice(0);
+
+            // Make changes to duplicated array
+            arr2.push(4);
+            arr2[0] = 99;
+
+            console.log(arr);
+            console.log(arr2);
+            console.log(arr3);
+        }
     </script>
 </body>
