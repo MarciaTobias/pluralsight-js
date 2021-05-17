@@ -6,8 +6,15 @@
 </head>
 
 <body>
-    <button onclick="functionScope();">Function Scope</button>
+    <button onclick="stringToArray();">String to Array</button>
     <script>
+        function stringToArray() {
+            let productNumber = "FR-R92B-58";
+
+            let values = [...productNumber];
+
+            console.log(values);
+        }
 
     </script>
 </body>
