@@ -111,7 +111,7 @@ function loadApplication() {
 
         var riskLabel = document.getElementById("riskSummary");
         riskLabel.style.display = "block";
-        riskLabel.innerText = generateRickProfile(la); 
+        riskLabel.innerHTML = generateRickProfile(la); 
 
     }
 }
@@ -339,9 +339,9 @@ function generateRickProfile(la) {
     var reviewText = "";
 
     if (age < 18) {
-        reviewText = "your application will not be reviewed, because you have to be 18 years or older.";
+        reviewText = "will not be reviewed, because you have to be 18 years or older";
     } else {
-        reviewText = "your application will be reviewed.";
+        reviewText = "will be reviewed";
     }
 
     var riskProfile = "";
@@ -356,10 +356,42 @@ function generateRickProfile(la) {
         riskProfile = "high";
     }
 
-    var summaryText = "Dear " + la.ApplicantName + ", " + reviewText + " Your risk profile is " + riskProfile;
+    var applicationCode = String.raw `\t${createApplicationId()}`;
+
+    // String raw takes the complete string of the template literal, including any escaped and special characters
+    // It is actually a tag for the template literal. Tags acts as a prerendering function
+    //var summaryText = String.raw `Dear ${la.ApplicantName},
+    var summaryText = highlightText `Dear ${la.ApplicantName}, <br>
+    your application for ${"$" + la.LoanAmount}, ${reviewText}. <br>
+    Your risk profile is ${riskProfile}, <br>
+    Your unique application code is ${applicationCode}`; // template literals preserves the line break
 
     return summaryText;
 }
+
+// Function format to tag templates
+function highlightText(strings, ...values) {
+    let str = "";
+    for (var i = 0; i < strings.raw.length; i++) {
+        if ( i > 0 ) {
+            str += `<b>${values[i-1]}</b>`
+        }
+        str += strings.raw[i];
+    }
+    return str;
+}
+
+
+function createApplicationId() {
+    var result = '';
+    var characters = 'ABCDEUVYZabcdrswxyz01789/\\//#@$%()*^!';
+    var charactersLenght = characters.length;
+    for (var i = 0; i < 8; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLenght));
+    }
+    return result;
+}
+
 
 
 
