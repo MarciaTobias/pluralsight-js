@@ -90,11 +90,26 @@ function loadApplication() {
 
     if (la != undefined) {
 
-        var isEmployed = la.Factors[0];
-        var hasKids = la.Factors[1];
-        var hasLoans = la.Factors[2];
-        var hasCreditcards = la.Factors[3];
+        //var isEmployed = la.Factors[0];
+        //var hasKids = la.Factors[1];
+        //var hasLoans = la.Factors[2];
+        //var hasCreditcards = la.Factors[3];
 
+        // Destructin Syntax, the substitute the variables above
+        // This array can be just with few variables not with all, undefined
+        // It can have ..moreArgs, when the lenght is unknown
+        var[
+            isEmployed,
+            hasKids = true,
+            hasLoans,
+            hasCreditcards
+        ] = la.Factors;
+
+        // How to Descontruct Object
+        var {
+            Id, 
+            ApplicantName: b
+        } = la; 
 
         document.getElementById("inputName").value = la.ApplicantName;
         document.getElementById("inputDoBMonth").value = la.ApplicantDateOfBirth.getMonth() + 1;
