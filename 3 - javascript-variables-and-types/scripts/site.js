@@ -343,30 +343,31 @@ function generateRickProfile(la) {
 
     var purpose = la.LoanPurpose.trim().toLowerCase();
 
-    var indexOfHouse = purpose.search("House");
-    var indexOfHouse2 = purpose.search("house");
-    var indexOfHoliday = purpose.search("Holiday");
-    var indexOfHoliday2 = purpose.search("holiday");
-    var indexOfHoliday3 = purpose.search("vacation");
-    var indexOfHoliday4 = purpose.search("Vacation");
-    var indexOfBusiness = purpose.search("Business");
-    var indexOfBusiness2 = purpose.search("business");
+    //var indexOfHouse = purpose.search("House");
+    //var indexOfHouse2 = purpose.search("house");
+    //var indexOfHoliday = purpose.search("Holiday");
+    //var indexOfHoliday2 = purpose.search("holiday");
+    //var indexOfHoliday3 = purpose.search("vacation");
+    //var indexOfHoliday4 = purpose.search("Vacation");
+    //var indexOfBusiness = purpose.search("Business");
+    //var indexOfBusiness2 = purpose.search("business");
 
     let house = purpose.includes("house");
-    let holiday 
+    let holiday = purpose.includes("holiday");
+    let vacation = purpose.includes("vacation");
+    let business = purpose.includes("business");
 
-    if (indexOfHouse > -1 || indexOfHouse2 > -1) {
+    if (house) {
         //the loan will be used for a house or building project
         risk = risk + 2;
     }
 
-    if (indexOfHoliday > -1 || indexOfHoliday2 > -1 
-        || indexOfHoliday3 > -1 || indexOfHoliday4 > -1) {
+    if (holiday || vacation) {
         //the loan will be used for a holiday
         risk = risk + 3;
     }
 
-    if (indexOfBusiness > -1 || indexOfBusiness2 > -1) {
+    if (business) {
         //the loan will be used for a business
         risk = risk + 1;
     }
