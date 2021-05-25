@@ -205,7 +205,12 @@ function getLoanApplicationDataFromInputs() {
     la.Factors[2] = hasLoans;
     la.Factors[3] = hasCreditcards;    
 
-    if (month != "" && day != "" && year != "") {
+    // Included Numebr.isInteger to validate the field date
+    // All numbers are stored in the same way as double-precision floating-point numbers,
+    // some large numbers can loose precision
+    // We can prevent it using MAX_SAFE_INTEGER
+    if (Number.isSafeInteger(month) && Number.isSafeInteger(day)
+    && Number.isSafeInteger(year)) {
         la.ApplicantDateOfBirth = new Date(year, month, day);
     }
 
@@ -278,21 +283,34 @@ function validateApplication() {
 function generateRickProfile(la) {
     var risk = 3;
 
-    var nameAndTitle = la.ApplicantName;
+    // Trim eliminates any white space
+    var nameAndTitle = la.ApplicantName.trim().toLowerCase();
 
-    var indexOfMD = nameAndTitle.search("MD");
-    var indexOfMD2 = nameAndTitle.search("M.D");
-    var indexOfMD3 = nameAndTitle.search("M.D.");
-    var indexOfPhD = nameAndTitle.search("PhD");
-    var indexOfPhD2 = nameAndTitle.search("Ph.D");
-    var indexOfPhD3 = nameAndTitle.search("PHD");
-    var indexOfDr = nameAndTitle.search("Dr.");
-    var indexOfDr2 = nameAndTitle.search("DR.");
+    //var indexOfMD = nameAndTitle.search("MD");
+    //var indexOfMD2 = nameAndTitle.search("M.D");
+    //var indexOfMD3 = nameAndTitle.search("M.D.");
+    //var indexOfPhD = nameAndTitle.search("PhD");
+    //var indexOfPhD2 = nameAndTitle.search("Ph.D");
+    //var indexOfPhD3 = nameAndTitle.search("PHD");
+    //var indexOfDr = nameAndTitle.search("Dr.");
+    //var indexOfDr2 = nameAndTitle.search("DR.");
 
-    if (indexOfMD > -1 || indexOfMD2 > -1 || indexOfMD3 > -1 
-        || indexOfPhD > -1 || indexOfPhD2 > -1 
-        || indexOfPhD3 > -1 || indexOfDr > -1 || indexOfDr2 > -1) {
+    let dr = nameAndTitle.startsWith("dr");
+    let phd = nameAndTitle.startsWith("phd");
+    let phd2 = nameAndTitle.startsWith("ph.d");
 
+    let md = nameAndTitle.endsWith('md');
+    let md2 = nameAndTitle.endsWith('m.d');
+    let md3 = nameAndTitle.endsWith('m.d.');
+
+    //if (indexOfMD > -1 || indexOfMD2 > -1 || indexOfMD3 > -1 
+    //    || indexOfPhD > -1 || indexOfPhD2 > -1 
+    //    || indexOfPhD3 > -1 || indexOfDr > -1 || indexOfDr2 > -1) {
+
+    //    risk = risk - 1;
+    //}
+
+    if (dr || phd || phd2 || md || md2 || md3) {
         risk = risk - 1;
     }
 
@@ -323,7 +341,7 @@ function generateRickProfile(la) {
         risk = risk + 1;
     }
 
-    var purpose = la.LoanPurpose;
+    var purpose = la.LoanPurpose.trim().toLowerCase();
 
     var indexOfHouse = purpose.search("House");
     var indexOfHouse2 = purpose.search("house");
@@ -333,6 +351,9 @@ function generateRickProfile(la) {
     var indexOfHoliday4 = purpose.search("Vacation");
     var indexOfBusiness = purpose.search("Business");
     var indexOfBusiness2 = purpose.search("business");
+
+    let house = purpose.includes("house");
+    let holiday 
 
     if (indexOfHouse > -1 || indexOfHouse2 > -1) {
         //the loan will be used for a house or building project
